@@ -11,11 +11,11 @@ Class Conta {
 
     )
     {
-        $this->conexao = new PDO("mysql:host=localhost;dbname=banco", "root", "senha");
+        $this->conexao = new PDO("mysql:host=localhost;dbname=banco", "root", "");
     }
 
     public function listar() {
-        
+        return "Listando";
     }
 
 
