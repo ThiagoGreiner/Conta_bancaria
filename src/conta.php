@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-Class Produto {
+Class Conta {
     
     private $conexao;
 
