@@ -13,6 +13,14 @@ Class Produto {
     {
         $this->conexao = new PDO('"mysql:host=localhost;dbname=banco", "root", "senha"');
     }
+
+    public function listar() {
+        
+    }
+
+
+
+
 }
 
 
