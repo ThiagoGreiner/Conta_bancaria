@@ -12,17 +12,22 @@ Class Conta {
     )
     {
         try {
+
             $this->conexao = new PDO("mysql:host=localhost;dbname=banco", "root", "");
 
         } catch(Exception $e) {
+            
             echo $e->getMessage();
             die();
         }
         
     }
 
-    public function listar() {
-        return "Listando";
+    // Métodos
+    public function saldo() {
+
+        
+
     }
 
 
