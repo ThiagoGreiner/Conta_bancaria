@@ -11,7 +11,14 @@ Class Conta {
 
     )
     {
-        $this->conexao = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+        try {
+            $this->conexao = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+
+        } catch(Exception $e) {
+            echo $e->getMessage();
+            die();
+        }
+        
     }
 
     public function listar() {
