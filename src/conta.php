@@ -24,9 +24,14 @@ Class Conta {
     }
 
     // Métodos
-    public function saldo() {
+    public function contas() {
 
-        
+        $sql = 'SELECT * FROM produtos';
+
+        foreach ($this->conexao->query($sql) as $key => $value) {
+            
+            echo 'Id: ' . $value['id'] . '<br> Descrição: ' . $value['descricao'] . '<br> Valor: ' . $value['valor']. '<hr>';
+        }
 
     }
 
