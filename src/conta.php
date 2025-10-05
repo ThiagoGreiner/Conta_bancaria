@@ -30,7 +30,7 @@ Class Conta {
 
         foreach ($this->conexao->query($sql) as $key => $value) {
             
-            echo 'Id: ' . $value['id'] . '<br> Descrição: ' . $value['descricao'] . '<br> Valor: ' . $value['valor']. '<hr>';
+            echo 'Id: ' . $value['id'] . '<br> Titular: ' . $value['nome_titular'] . '<br> Tipo: ' . $value['tipo'] . '<br> Saldo: ' . $value['saldo'] . '<br> Status: ' . $value['status'] . '<br> Data de Abertura: ' . $value['data_abertura'] . '<br> Data de Encerramento: ' . $value['data_encerramento'] . '<br> Telefone: ' . $value['telefone'] . '<hr>';
         }
 
     }
