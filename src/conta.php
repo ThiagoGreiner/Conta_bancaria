@@ -26,7 +26,7 @@ Class Conta {
     // Métodos
     public function contas() {
 
-        $sql = 'SELECT * FROM produtos';
+        $sql = 'SELECT * FROM conta';
 
         foreach ($this->conexao->query($sql) as $key => $value) {
             
