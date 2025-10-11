@@ -1,0 +1,10 @@
+CREATE TABLE conta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_titular VARCHAR(150) NOT NULL,
+    tipo ENUM('PF', 'PJ') NOT NULL,
+    saldo DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    status ENUM('ATIVA','INATIVA') DEFAULT 'ATIVA',
+    data_abertura TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_encerramento TIMESTAMP NULL,
+    telefone VARCHAR(20)
+);
