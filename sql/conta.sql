@@ -1,3 +1,5 @@
+CREATE DATABASE bank;
+
 CREATE TABLE conta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_titular VARCHAR(150) NOT NULL,
