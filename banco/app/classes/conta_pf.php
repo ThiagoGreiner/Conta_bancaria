@@ -30,7 +30,7 @@ class ContaPF extends Conta {
             // Iniciando transação BD
             $this->conexao->beginTransaction();
 
-            // Recuperando id gerado na conta
+            // Cria conta base e recupera id
             $contaId = $this->criarContaBase($this->nomeCompleto, 'PF', $this->telefone);
             
             // Inseri dados na pessoa fisica
