@@ -18,7 +18,7 @@ Class Conta {
         $this->telefone = $telefone;
     }
 
-    // Métodos
+    // Métodos listar contas (Somente para bancarios)
     public function listarContas(): void {
 
         $sql = 'SELECT * FROM conta';
@@ -29,13 +29,14 @@ Class Conta {
         }
     }
     
+    // Método criar conta, base para PF e PJ
     protected function criarContaBase(string $nomeTitular, string $tipo, string $telefone): int {
 
         $sql = "INSERT INTO conta (nome_titular, tipo, saldo, telefone)
                 VALUES (:nome_titular, :tipo, 0.00, :telefone)";
 
         $prepare = $this->conexao->prepare($sql);
-        
+
         $prepare->bindValue(':nome_titular', $nomeTitular);
         $prepare->bindValue(':tipo', $tipo);
         $prepare->bindValue(':telefone', $telefone);
