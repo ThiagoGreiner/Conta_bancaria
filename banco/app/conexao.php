@@ -9,10 +9,9 @@
                 $senha = getenv('DB_PASS') ?: '';
 
                 return new PDO($dsn, $usuario, $senha);
-
+                
             } catch (Exception $e) {
-                echo $e->getMessage();
-                die();
+                die("Erro na conexão: " . $e->getMessage());
                 
             }
         }
