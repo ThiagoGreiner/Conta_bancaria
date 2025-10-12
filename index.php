@@ -1,9 +1,9 @@
 <?php
 
-require './src/conta.php';
+require './banco/app/classes/conta.php';
 
 $conta = new Conta();
 
-$conta->contas();
+$conta->listarContas();
 
 ?>
