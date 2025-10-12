@@ -13,8 +13,11 @@ Class Conta {
     {
         // Criando coxeção com BD
         try {
+            $dsn = "mysql:host=localhost;dbname=bank";
+            $usuario = getenv('DB_USER') ?: 'root';
+            $senha = getenv('DB_PASS') ?: '';
 
-            $this->conexao = new PDO("mysql:host=localhost;dbname=bank", "root", "");
+            $this->conexao = new PDO($dsn, $usuario, $senha);
 
         } catch(Exception $e) {
             
