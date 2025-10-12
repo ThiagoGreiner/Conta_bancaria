@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $criandoConta = $pf->criarConta();
 
+    // Verificando se conta foi criado com sucesso
     if ($criandoConta) {
         echo "Conta criada com sucesso!";
     } else {
