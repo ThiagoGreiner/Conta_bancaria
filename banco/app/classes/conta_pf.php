@@ -54,10 +54,12 @@ class ContaPF extends Conta {
         } catch (PDOException $e) {
             // Cancela transação BD
             $this->conexao->rollBack();
-            
+
             echo "Erro ao criar conta PF: " . $e->getMessage();
             return false;
         }
     }
 
 }
+
+?>
