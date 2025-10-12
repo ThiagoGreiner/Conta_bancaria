@@ -5,15 +5,15 @@ require_once './conexao.php';
 
 Class Conta {
     
-    // Variável tipo PDO
+    // Atributo tipo PDO
     private PDO $conexao;
 
     public function __construct
     (
-
+        PDO $conexao
     )
     {
-        
+        $this->conexao = Conexao::getConexao();
     }
 
     // Métodos
