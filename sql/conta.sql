@@ -8,5 +8,6 @@ CREATE TABLE conta (
     status ENUM('ATIVA','INATIVA') DEFAULT 'ATIVA',
     data_abertura TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     data_encerramento TIMESTAMP NULL,
-    telefone VARCHAR(20)
+    telefone VARCHAR(20),
+    senha VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
