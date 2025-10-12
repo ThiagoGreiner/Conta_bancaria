@@ -25,4 +25,10 @@ class ContaPF extends Conta
         $this->dataNascimento = $dataNascimento;
     }
 
+    // Criar conta PF
+    public function criarConta(): bool
+    {
+        
+    }
+
 }
