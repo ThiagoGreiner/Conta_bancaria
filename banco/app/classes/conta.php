@@ -17,7 +17,7 @@ Class Conta {
     }
 
     // Métodos
-    public function listarContas() {
+    public function listarContas(): void {
 
         $sql = 'SELECT * FROM conta';
 
