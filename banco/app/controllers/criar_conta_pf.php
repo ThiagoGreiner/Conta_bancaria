@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-require_once './banco/app/classes/conta_pf.php';
+require_once __DIR__ . '/../classes/conta_pf.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
