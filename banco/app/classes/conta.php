@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-require_once './conexao.php';
+require_once './banco/app/classes/conexao.php';
 
 Class Conta {
     
@@ -10,7 +10,7 @@ Class Conta {
 
     public function __construct
     (
-        PDO $conexao
+    
     )
     {
         $this->conexao = Conexao::getConexao();
