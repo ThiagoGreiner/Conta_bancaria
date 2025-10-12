@@ -14,7 +14,7 @@ Class Conta {
         // Criando coxeção com BD
         try {
 
-            $this->conexao = new PDO("mysql:host=localhost;dbname=banco", "root", "");
+            $this->conexao = new PDO("mysql:host=localhost;dbname=bank", "root", "");
 
         } catch(Exception $e) {
             
