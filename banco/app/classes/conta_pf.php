@@ -3,8 +3,7 @@
 declare(strict_types=1);
 require_once './banco/app/classes/Conta.php';
 
-class ContaPF extends Conta
-{
+class ContaPF extends Conta {
     private string $nomeCompleto;
     private string $cpf;
     private string $dataNascimento;
@@ -26,9 +25,15 @@ class ContaPF extends Conta
     }
 
     // Criar conta PF
-    public function criarConta(): bool
-    {
-        
+    public function criarConta(): bool {
+        try {
+            // Iniciando transação BD
+            $this->conexao->beginTransaction();
+
+        } catch (PDOException $e) {
+            echo "Erro ao criar conta PF: " . $e->getMessage();
+            return false;
+        }
     }
 
 }
