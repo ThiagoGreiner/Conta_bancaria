@@ -6,14 +6,16 @@ require_once './banco/app/classes/conexao.php';
 Class Conta {
     
     // Atributo tipo PDO
-    private PDO $conexao;
+    protected PDO $conexao;
+    protected string $telefone;
 
     public function __construct
     (
-    
+        string $telefone
     )
     {
         $this->conexao = Conexao::getConexao();
+        $this->telefone = $telefone;
     }
 
     // Métodos
