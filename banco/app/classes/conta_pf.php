@@ -25,7 +25,7 @@ class ContaPF extends Conta {
     }
 
     // Criar conta PF
-    public function criarConta($senha): bool {
+    public function criarConta(string $senha): bool {
         try {
             // Iniciando transação BD
             $this->conexao->beginTransaction();
