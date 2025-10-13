@@ -30,16 +30,17 @@ Class Conta {
     }
     
     // Método criar conta, base para PF e PJ
-    protected function criarContaBase(string $nomeTitular, string $tipo, string $telefone): int {
+    protected function criarContaBase(string $nomeTitular, string $tipo, string $telefone, string $senha): int {
 
-        $sql = "INSERT INTO conta (nome_titular, tipo, saldo, telefone)
-                VALUES (:nome_titular, :tipo, 0.00, :telefone)";
+        $sql = "INSERT INTO conta (nome_titular, tipo, saldo, telefone, senha)
+                VALUES (:nome_titular, :tipo, 0.00, :telefone, :senha)";
 
         $prepare = $this->conexao->prepare($sql);
 
         $prepare->bindValue(':nome_titular', $nomeTitular);
         $prepare->bindValue(':tipo', $tipo);
         $prepare->bindValue(':telefone', $telefone);
+        $prepare->bindValue(':senha', $senha);
         $prepare->execute();
 
         return (int) $this->conexao->lastInsertId();

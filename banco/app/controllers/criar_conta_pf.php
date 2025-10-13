@@ -10,16 +10,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cpf = trim($_POST['cpf']);
     $dataNascimento = $_POST['data_nascimento'];
     $telefone = trim($_POST['telefone']);
+    $telefone = trim($_POST['senha']);
 
     // Verificando se todos campos foram preenchidos
-    if (!$nome || !$cpf || !$dataNascimento || !$telefone) {
+    if (!$nome || !$cpf || !$dataNascimento || !$telefone || !$senha) {
         die("Preencha todos os campos.");
     }
 
-    
     $pf = new ContaPF($nome, $cpf, $dataNascimento, $telefone);
 
-    $criandoConta = $pf->criarConta();
+    $criandoConta = $pf->criarConta($senha);
 
     // Verificando se conta foi criado com sucesso
     if ($criandoConta) {
