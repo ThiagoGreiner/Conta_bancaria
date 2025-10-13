@@ -24,13 +24,16 @@ class ContaPJ extends Conta {
         $this->nomeFantasia = $nomeFantasia;
     }
 
-    public function criarConta(): bool {
+    public function criarConta(string $senha): bool {
         try {
             // Iniciando transação BD
             $this->conexao->beginTransaction();
 
+            // Criptografando senha
+            $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
+
             // Cria e conta base e recupera id
-            $contaId = $this->criarContaBase($this->razaoSocial, 'PJ', $this->telefone);
+            $contaId = $this->criarContaBase($this->razaoSocial, 'PJ', $this->telefone, $hashSenha);
 
             // Insere dados na pessoa_juridica
             $sqlPJ = "INSERT INTO pessoa_juridica (conta_id, razao_social, cnpj, nome_fantasia)

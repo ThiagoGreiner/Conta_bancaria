@@ -10,15 +10,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cnpj = trim($_POST['cnpj']);
     $nomeFantasia = trim($_POST['nome_fantasia'] ?? '');
     $telefone = trim($_POST['telefone']);
+    $senha = trim($_POST['senha']);
 
     // Verificando se todos campos foram preenchidos
-    if (!$razaoSocial || !$cnpj || !$telefone) {
+    if (!$razaoSocial || !$cnpj || !$telefone || !$senha) {
         die("Preencha todos os campos obrigatórios.");
     }
 
     $pj = new ContaPJ($razaoSocial, $cnpj, $nomeFantasia ?: null, $telefone);
     
-    $criandoConta = $pj->criarConta();
+    $criandoConta = $pj->criarConta($senha);
 
     // Verificando se conta foi criado com sucesso
     echo $criandoConta ? "Conta PJ criada com sucesso!" : "Erro ao criar conta PJ.";
