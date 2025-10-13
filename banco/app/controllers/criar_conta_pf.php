@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cpf = trim($_POST['cpf']);
     $dataNascimento = $_POST['data_nascimento'];
     $telefone = trim($_POST['telefone']);
-    $telefone = trim($_POST['senha']);
+    $senha = trim($_POST['senha']);
 
     // Verificando se todos campos foram preenchidos
     if (!$nome || !$cpf || !$dataNascimento || !$telefone || !$senha) {
