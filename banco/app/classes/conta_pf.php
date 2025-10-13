@@ -25,13 +25,16 @@ class ContaPF extends Conta {
     }
 
     // Criar conta PF
-    public function criarConta(): bool {
+    public function criarConta($senha): bool {
         try {
             // Iniciando transação BD
             $this->conexao->beginTransaction();
 
+            // Criptografando senha
+            $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
+
             // Cria conta base e recupera id
-            $contaId = $this->criarContaBase($this->nomeCompleto, 'PF', $this->telefone);
+            $contaId = $this->criarContaBase($this->nomeCompleto, 'PF', $this->telefone, $hashSenha);
             
             // Inseri dados na pessoa fisica
             $sqlPF = "INSERT INTO pessoa_fisica (conta_id, nome_completo, cpf, data_nascimento) VALUES (:conta_id, :nome, :cpf, :data_nascimento)";
