@@ -33,7 +33,7 @@ class ContaPJ extends Conta {
             $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
             // Cria e conta base e recupera id
-            $contaId = $this->criarContaBase($this->razaoSocial, 'PJ', $this->telefone, $hashSenha);
+            $contaId = $this->criarContaBase($this->razaoSocial, $this->cnpj,'PJ', $this->telefone, $hashSenha);
 
             // Insere dados na pessoa_juridica
             $sqlPJ = "INSERT INTO pessoa_juridica (conta_id, razao_social, cnpj, nome_fantasia)
