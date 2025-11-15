@@ -2,7 +2,7 @@
 
     class Conexao {
 
-        public static function getConexao(): PDO {
+        public static function conectar(): PDO {
             try {
                 $dsn = "mysql:host=localhost;dbname=bank";
                 $usuario = getenv('DB_USER') ?: 'root';

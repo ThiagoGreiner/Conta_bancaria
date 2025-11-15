@@ -14,7 +14,7 @@ Class Conta {
         string $telefone
     )
     {
-        $this->conexao = Conexao::getConexao();
+        $this->conexao = Conexao::conectar();
         $this->telefone = $telefone;
     }
 
