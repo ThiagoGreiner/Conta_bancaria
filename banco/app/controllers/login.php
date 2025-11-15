@@ -26,6 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Capturando retorno de consulta
         $conta = $stmt->fetch(PDO::FETCH_ASSOC);
 
+        if (!$conta) {
+            die("Usuário não encontrado, verifique o dado inserido ou procure sua agencia");
+        }
+
+        // Conferir senha
+        if (!password_verify($senha, $conta['senha'])) {
+            die("Senha incorreta.");
+        }
+
+    } catch (PDOException $e) {
+        echo "Erro no login: " . $e->getMessage();
     }
 }
 
