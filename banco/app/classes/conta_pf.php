@@ -34,7 +34,7 @@ class ContaPF extends Conta {
             $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
 
             // Cria conta base e recupera id
-            $contaId = $this->criarContaBase($this->nomeCompleto, 'PF', $this->telefone, $hashSenha);
+            $contaId = $this->criarContaBase($this->nomeCompleto, $this->cpf,'PF', $this->telefone, $hashSenha);
             
             // Inseri dados na pessoa fisica
             $sqlPF = "INSERT INTO pessoa_fisica (conta_id, nome_completo, cpf, data_nascimento) VALUES (:conta_id, :nome, :cpf, :data_nascimento)";
