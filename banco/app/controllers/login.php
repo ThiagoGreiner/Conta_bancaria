@@ -35,6 +35,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             die("Senha incorreta.");
         }
 
+        // Iniciando sessão
+        session_start();
+
+        // Dados da sessão
+        $_SESSION['logado'] = true;
+        $_SESSION['conta_id'] = (int)$conta['id'];
+        $_SESSION['nome_titular'] = $conta['nome_titular'];
+        $_SESSION['documento'] = $conta['documento'];
+        $_SESSION['tipo'] = $conta['tipo'];
+        $_SESSION['saldo'] = $conta['saldo'];
+        $_SESSION['ultimo_acesso'] = time();
+
+        // redireciona para o painel
+        header('Location: ../public/painel.php');
+        exit;
+
     } catch (PDOException $e) {
         echo "Erro no login: " . $e->getMessage();
     }
