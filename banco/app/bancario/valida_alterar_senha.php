@@ -6,8 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Armazena dados de id e senha
     $idConta = $_POST['id_conta'];
-    $novaSenha = $_POST['nova_senha'];
-    $confirmarSenha = $_POST['confirmar_senha'];
+    $novaSenha = $_POST['senha'];
+    $confirmarSenha = $_POST['confirma_senha'];
 
     if ($novaSenha !== $confirmarSenha) {
         die("As senhas não conferem.");
