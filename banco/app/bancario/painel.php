@@ -54,7 +54,7 @@ $clientes = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= $c['data_abertura'] ?></td>
                     <td><?= $c['data_encerramento'] ?></td>
 
-                    <td><a href="">Alterar Senha</a></td>
+                    <td><a href="alterar_senha.php?id=<?= $c['id'] ?>">Alterar Senha</a></td>
                     <td><a href="">Encerrar Conta</a></td>
                     <td><a href="">Mais Opções</a></td>
                 </tr>
