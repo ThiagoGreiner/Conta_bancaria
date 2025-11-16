@@ -18,7 +18,7 @@ $idConta = isset($_GET['id']) ? $_GET['id'] : '';
 
     <h2>Alterar Senha da Conta</h2>
 
-    <form action="" method="POST">
+    <form action="./valida_alterar_senha.php" method="POST">
     
         <!-- Envia ID para valida_alterar_senha -->
         <input type="hidden" name="id_conta" value="<?= htmlspecialchars($idConta) ?>">
